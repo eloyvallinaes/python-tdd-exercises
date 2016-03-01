@@ -105,7 +105,7 @@ def get_word_lengths(s):
     lengths=[]
     words=s.split()
     for w in words:
-	lengths.append(len(w))
+        lengths.append(len(w))
     return lengths
 
 
