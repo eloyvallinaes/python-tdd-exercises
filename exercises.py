@@ -23,9 +23,9 @@ def test_reverse_string():
 
 def is_english_vowel(c):
     if c in "aAeEiIoOuUyY":
-	call=True
+        call=True
     else:
-	call=False
+        call=False
     return call
 
 
@@ -266,7 +266,6 @@ def get_position_indices(triplet, dna):
     in a DNA sequence. We start counting from 0
     and jump by 3 characters from one position to the next.
     """
-    
 
 
 def test_get_position_indices():
