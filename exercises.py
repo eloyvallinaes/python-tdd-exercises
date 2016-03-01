@@ -266,7 +266,11 @@ def get_position_indices(triplet, dna):
     in a DNA sequence. We start counting from 0
     and jump by 3 characters from one position to the next.
     """
-
+    position=[]
+    for i in range(0,len(dna), 3):
+            if triplet == dna[i:i+3]:
+                position.append(i/3)
+    return position
 
 def test_get_position_indices():
     assert get_position_indices('GAA', 'CCGGAAGAGCTTACTTAG') == [1]
@@ -284,7 +288,15 @@ def get_3mer_usage_chart(s):
     The list is alphabetically sorted by the name
     of the 3-mer.
     """
-    return None
+    triplet=[]
+    result=[]
+    for i in range(0, len(s)-2):
+        triplet.append(s[i:i+3])
+
+    for item in sorted(set(triplet)):
+        result.append((item, triplet.count(item)))
+    return result
+
 
 
 def test_get_3mer_usage_chart():
@@ -315,8 +327,12 @@ def read_column(file_name, column_number):
     Reads column column_number from file file_name
     and returns the values as floats in a list.
     """
-    return None
-
+    output=[]
+    f=open(file_name, 'r').readlines()
+    for line in f:
+        output.append(float(line.split()
+[column_number-1]))
+    return output
 
 def test_read_column():
 
@@ -353,8 +369,20 @@ def character_statistics(file_name):
     Use the isalpha() method to figure out
     whether the character is in the alphabet.
     """
-    return None
+    maxocu=0
+    minocu=10000
+    f=str(open(file_name).readlines())
+    f=f.lower()
+    for item in f:
+        if item.isalpha() and f.count(item)>maxocu:
+                maxocu=f.count(item)
+                maxletter=item
+        elif item.isalpha() and f.count(item)<minocu:
+                minocu=f.count(item)
+                minletter=item
 
+    output=(maxletter,minletter)
+    return output
 
 def test_character_statistics():
 
