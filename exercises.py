@@ -459,4 +459,8 @@ def pythagorean_triples(n):
 # ------------------------------------------------------------------------------
 
 def test_pythagorean_triples():
-    pass  # so far we do not test anything, check also test coverage
+
+    results=[(5, 12, 13), (8, 15, 17), (65, 72, 97)]
+    assert pythagorean_triples(13)[-1] == results[0]
+    assert pythagorean_triples(17)[-1] == results[1]
+    assert pythagorean_triples(99)[-1] == results[2]
