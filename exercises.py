@@ -56,7 +56,7 @@ def count_num_vowels(s):
     i=0
     for letter in s:
         if letter in "aAeEiIoOuUyY":
-	    i=i+1
+            i=i+1
 
     return i
 
@@ -82,11 +82,11 @@ def histogram(l):
     """
     hist=''
     for i in l:
-	j=1
-	while j<=i:
-	    hist=hist+"#"
-	    j=j+1
-	hist=hist+"\n"
+        j=1
+        while j<=i:
+            hist=hist+"#"
+            j=j+1
+        hist=hist+"\n"
     hist=hist.strip()
     return hist
 
@@ -125,7 +125,7 @@ def find_longest_word(s):
     words=s.split()
     mlen=0
     for w in  words:
-	if len(w) > mlen:
+        if len(w) > mlen:
             mlen=len(w)
 	    mword=w
     return mword
@@ -148,7 +148,7 @@ def validate_dna(s):
     if set(s) - set('AaTtCcGg') != set():
         return False
     else:
-	return True
+        return True
 
 
 def test_validate_dna():
@@ -168,9 +168,9 @@ def base_pair(c):
     bases='aAcCgGtT'
     mydict={'a':'t', 'A':'t', 'c':'g', 'C':'g', 't':'a', 'T':'a', 'g':'c', 'G':'c'}
     if c in bases:
-	return mydict[c]
+        return mydict[c]
     else:
-	return 'unknown'
+        return 'unknown'
 
 def test_base_pair():
     assert base_pair('a') == 't'
